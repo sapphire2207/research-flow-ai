@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0b0f;
+  --foreground: #f8fafc;
+  --surface: #10141d;
+  --surface-strong: #151b27;
+  --muted: #94a3b8;
+  --accent-indigo: #6366f1;
+  --accent-cyan: #22d3ee;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-strong: var(--surface-strong);
+  --font-sans: var(--font-urbanist);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 24% 10%, rgba(99, 102, 241, 0.18), transparent 30rem),
+    radial-gradient(circle at 78% 2%, rgba(34, 211, 238, 0.14), transparent 28rem),
+    linear-gradient(180deg, #0a0b0f 0%, #0d1016 48%, #0a0b0f 100%);
+  color: var(--foreground);
+  font-family: var(--font-urbanist), Arial, Helvetica, sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+.site-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+.site-shell::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  content: "";
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: linear-gradient(to bottom, black, transparent 75%);
+}
+
+.animate-enter {
+  animation: enter 560ms ease-out both;
+}
+
+.active-step-glow {
+  position: absolute;
+  inset: -35%;
+  background: linear-gradient(
+    110deg,
+    transparent 30%,
+    rgba(34, 211, 238, 0.16),
+    transparent 70%
+  );
+  animation: shimmer 2.1s ease-in-out infinite;
+}
+
+.prose-custom {
+  color: #cbd5e1;
+}
+
+.prose-custom code {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.12rem 0.32rem;
+  color: #e0f2fe;
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo,
+    Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+.prose-custom pre {
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: rgba(2, 6, 23, 0.76);
+  padding: 1rem;
+}
+
+.prose-custom pre code {
+  border: 0;
+  background: transparent;
+  padding: 0;
+}
+
+.prose-custom blockquote {
+  margin: 1.5rem 0;
+  border-left: 3px solid rgba(34, 211, 238, 0.55);
+  padding-left: 1rem;
+  color: #dbeafe;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-18%);
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(18%);
+    opacity: 0.5;
+  }
+}
