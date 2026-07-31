@@ -20,7 +20,7 @@ app.add_middleware(
 app.include_router(router)
 
 
-@app.get("/")
+@app.api_route("/", methods=["GET", "HEAD"])
 def root():
     return {
         "message": "Research AI Backend is Running"
