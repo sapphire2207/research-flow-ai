@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { PipelineProgress } from "@/components/PipelineProgress";
-import { ResultsView } from "@/components/ResultsView";
-import { TopicInput } from "@/components/TopicInput";
-import { fetchResearch, fetchResearchStream, ResearchError } from "@/lib/api";
-import type { ResearchErrorKind } from "@/lib/api";
-import type { ResearchResponse } from "@/lib/types";
+import { PipelineProgress } from "../components/PipelineProgress";
+import { ResultsView } from "../components/ResultsView";
+import { TopicInput } from "../components/TopicInput";
+import { fetchResearch, fetchResearchStream, ResearchError } from "../lib/api";
+import type { ResearchErrorKind } from "../lib/api";
+import type { ResearchResponse } from "../lib/types";
 
 type ViewState = "idle" | "loading" | "results";
 

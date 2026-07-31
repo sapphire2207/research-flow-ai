@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { MarkdownRenderer } from "@/components/MarkdownRenderer";
-import { ScoreBadge } from "@/components/ScoreBadge";
-import type { ResearchResponse } from "@/lib/types";
+import { MarkdownRenderer } from "./MarkdownRenderer";
+import { ScoreBadge } from "./ScoreBadge";
+import type { ResearchResponse } from "../lib/types";
 
 interface ResultsViewProps {
   result: ResearchResponse;
