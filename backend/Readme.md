@@ -121,7 +121,8 @@ State is defined using Python's `TypedDict` as `ResearchState`:
 
 ```
 backend/
-├── app.py                  # FastAPI application entrypoint & middleware configuration
+├── app/
+│   └── main.py             # FastAPI application entrypoint & middleware configuration
 ├── requirements.txt        # Python dependency manifest
 ├── Readme.md               # Backend documentation
 ├── .env                    # Environment key storage (API keys)
@@ -249,7 +250,7 @@ TAVILY_API_KEY=your_tavily_api_key_here
 Start the FastAPI development server with Uvicorn:
 
 ```bash
-uvicorn app:app --reload --port 8000
+uvicorn app.main:app --reload --port 8000
 ```
 
 The API server will run at `http://localhost:8000`. You can test the endpoints interactively via the built-in Swagger UI at `http://localhost:8000/docs`.
